@@ -38,7 +38,7 @@ export class tcBattlefield{
       }
       
       if(!found)
-        this.battlefield[this.battlefield.length]=randomNumber;
+        this.battlefield[this.battlefield.length] = randomNumber;
     }
   }
    
