@@ -73,4 +73,9 @@ export class tcBattlefield{
     else
       return 'O';
   }
+  
+  endGame(){
+    if(this.winner.endGame || this.draw)
+      return true;
+  }
 }
