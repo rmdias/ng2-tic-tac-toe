@@ -11,7 +11,7 @@
 </div>
 
 {{winner.endGame}}
-<h2 *ngIf="!winner && !draw">Current player is -> {{currentPlayerLabel}}</h2>
+<h2 *ngIf="!winner && !draw">Current player is -> <span [innerHTML]="currentPlayerLabel"></span></h2>
 <br><br>
-<h2 *ngIf="winner">Winner is -> {{winner.winner}}</h2>
+<h2 *ngIf="winner">Winner is -> <span [innerHTML]="winner.winner"></span></h2>
 <h2 *ngIf="draw">DRAW!!</h2>

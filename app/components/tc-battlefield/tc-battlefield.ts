@@ -69,9 +69,9 @@ export class tcBattlefield{
   
   returnCurrentPlayer(currentPlayer:any){
     if(currentPlayer)
-      return 'X';
+      return '<img src="app/images/ic_X.svg" alt="X">';
     else
-      return 'O';
+      return '<img src="app/images/ic_O.svg" alt="O">';
   }
   
   endGame(){

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Winner} from '../tc-winner/tc-winner'
+import {Winner} from '../tc-winner/tc-winner';
 
 @Injectable()
 export class tcService{
