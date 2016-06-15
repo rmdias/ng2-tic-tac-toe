@@ -10,14 +10,14 @@ body{
 }
 
 .tc-battlefield{
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -200px;
   margin-left: -200px;
-  border: 50px solid black;   
+  border: 40px solid black;   
   border-radius: 6px;  
   background: black;
   -webkit-user-select: none;  /* Chrome all / Safari all */
@@ -27,12 +27,12 @@ body{
 }
 
 .square{
-  width: 22%;
-  height: 22%;
+  width: 22.5%;
+  height: 22.5%;
   background-color: #232323;
   float: left;
   text-align: center;
-  margin: 25px; 
+  margin: 20px; 
   cursor: pointer;
   font-size: 50px;
   line-height: 2.5;
@@ -40,7 +40,7 @@ body{
   
   img{
     width: 70%;
-    margin-top: 10px
+    margin-top: 8px
   }
 }
 
