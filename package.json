@@ -1,6 +1,10 @@
 {
   "name": "angular2-tic-tac-toe",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rmdias/ng2-tic-tac-toe.git"
+  },
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
     "lite": "lite-server",
