@@ -1,17 +1,18 @@
+<h2 *ngIf="!winner && !draw" class="current-player">It’s <span [innerHTML]="currentPlayerLabel"></span> turn! <span class="title-block"></span></h2>
+<h2 *ngIf="winner" class="winner-player">Congratulations, <span [innerHTML]="winner.winner"></span> wins!<span class="title-block"></span></h2>
+<h2 *ngIf="draw" class="draw">DRAW!! <span class="title-block"></span></h2>
+
 <div class="tc-battlefield">
-  <div class="square top left" (click)="play(0, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square top" (click)="play(1, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square top right" (click)="play(2, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square left" (click)="play(3, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square" (click)="play(4, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square right" (click)="play(5, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square bottom left" (click)="play(6, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square bottom" (click)="play(7, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
-  <div class="square bottom right" (click)="play(8, currentPlayer)" tc-set-value [endGame]="endGame()" [value]="currentPlayerLabel"></div>
+  <div class="square top left" (click)="play(0, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square top" (click)="play(1, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square top right" (click)="play(2, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square left" (click)="play(3, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square" (click)="play(4, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square right" (click)="play(5, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square bottom left" (click)="play(6, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square bottom" (click)="play(7, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="square bottom right" (click)="play(8, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
 </div>
 
-{{winner.endGame}}
-<h2 *ngIf="!winner && !draw">Current player is -> <span [innerHTML]="currentPlayerLabel"></span></h2>
-<br><br>
-<h2 *ngIf="winner">Winner is -> <span [innerHTML]="winner.winner"></span></h2>
-<h2 *ngIf="draw">DRAW!!</h2>
+<tc-restart-game (click)="startGame()"></tc-restart-game>
+<!--<button *ngIf="winner || draw" >PLAY AGAIN</button>-->

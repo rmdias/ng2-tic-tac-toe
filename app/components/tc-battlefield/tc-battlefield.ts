@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import{tcService} from '../tc-service/tc-service';
 import{tcSetValue} from '../tc-set-value/tc-set-value';
-
+import{tcRestartGame} from '../tc-restart-game/tc-restart-game';
 
 @Component({
   selector: 'tc-battlefield',
   templateUrl: 'app/components/tc-battlefield/tpl/tc-battlefield.html',
   providers: [tcService],
-  directives : [tcSetValue]
+  directives : [tcSetValue, tcRestartGame]
 })
 
 export class tcBattlefield{
@@ -59,23 +59,17 @@ export class tcBattlefield{
     let gameStatus:any = this._tcService.checkGame(this.battlefield);
     
     if(gameStatus !== undefined && gameStatus.endGame){
+      gameStatus.winner = this.returnCurrentPlayer(gameStatus.winner);
       this.winner = gameStatus;
-      setTimeout(() => this.startGame(), 2000);
     }else if(gameStatus !== undefined && gameStatus.draw){
       this.draw = gameStatus.draw;
-      setTimeout(() => this.startGame(), 2000);      
     }
   }
   
   returnCurrentPlayer(currentPlayer:any){
-    if(currentPlayer)
+    if((currentPlayer && typeof(currentPlayer) === 'boolean')|| (currentPlayer && typeof(currentPlayer) === 'string') && currentPlayer === 'X')
       return '<img src="app/images/ic_X.svg" alt="X">';
     else
       return '<img src="app/images/ic_O.svg" alt="O">';
-  }
-  
-  endGame(){
-    if(this.winner.endGame || this.draw)
-      return true;
   }
 }
