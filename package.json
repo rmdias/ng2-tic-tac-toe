@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
+    "lite": "http-server",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
-    "lite-server": "^2.2.0",
+    "http-server": "^0.9.0",
     "typescript": "^1.8.10",
     "typings":"^1.0.4"
   }
