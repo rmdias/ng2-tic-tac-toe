@@ -1,4 +1,4 @@
-# Ng2 Tic Tac Toe - Game
+# Ng2 Tic Tac Toe
 A Tic Tac Toe game built with ❤️ and Angular2
 
 ![NG2 Tic Tac Toe](https://raw.githubusercontent.com/rmdias/ng2-tic-tac-toe/master/app/images/tictactoe.png) 
