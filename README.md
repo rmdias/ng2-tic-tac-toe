@@ -6,9 +6,11 @@ A Tic Tac Toe game built with ❤️ and Angular2
 Usage :)
 ---------------- 
 Clone the github repository:
+    
     git clone https://github.com/rmdias/ng2-tic-tac-toe.git
     cd ng2-tic-tac-toe
     npm install
 
 Run the project: 
+    
     npm start
