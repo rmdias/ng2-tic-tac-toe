@@ -3,5 +3,4 @@
 ### VisualStudioCode ###
 .vscode
 .DS_Store
-app/**/*.js
 *.map
