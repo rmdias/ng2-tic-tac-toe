@@ -78,7 +78,6 @@ tc-battlefield{
   width: 340px;
   height: 62px;
   margin: 0 auto 34px auto;
-  font-family: Roboto;
   font-size: 26px;
   display: block;
   color: #555;
@@ -109,5 +108,25 @@ tc-battlefield{
 
 .draw{
   @extend .current-player;
-  
+}
+
+.btn-play-again{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: #737373;
+  font-size: 21px;
+  border: none;
+  background-color: transparent; 
+  cursor: pointer;
+  display: inline-block;
+  padding: 20px 0;
+  width: 131%;
+  outline: none;
+}
+
+.tc-lock-field{
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
