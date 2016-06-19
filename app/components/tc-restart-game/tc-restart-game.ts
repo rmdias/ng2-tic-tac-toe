@@ -1,19 +1,21 @@
-import {Component} from '@angular/core';
+import {Directive} from '@angular/core';
 
-@Component({
-  selector: 'tc-restart-game',
-  template: '<button (click)="restartGame()">PLAY AGAIN</button>'
+@Directive({
+  selector: '[tc-restart-game]',
+  host: {
+    '(click)': 'restartGame()'
+   }
 })
 
 export class tcRestartGame{
   constructor(){
-    this.restartGame()
+    console.log('ops')
   }
   
  restartGame(){
    let battleField:any = document.querySelectorAll('.square');
 
-   for (let index:any = 0; index < battleField.length; index++)
+   for (let index:number = 0; index < battleField.length; index++)
     battleField[index].innerHTML = '';
   }
 }
