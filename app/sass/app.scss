@@ -12,6 +12,17 @@ body{
   font-family: "Roboto","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
+.angular-loading{
+  width: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -124px;
+  margin-left: -165px;
+  display: block;
+
+}
+
 tic-tac-toe{
   width: 100%; 
   display: block;
