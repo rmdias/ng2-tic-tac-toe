@@ -12,7 +12,7 @@
   <div class="square bottom left" (click)="play(6, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
   <div class="square bottom" (click)="play(7, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
   <div class="square bottom right" (click)="play(8, currentPlayer)" tc-set-value [value]="currentPlayerLabel"></div>
+  <div class="tc-lock-field" *ngIf="winner || draw"></div>
 </div>
 
-<tc-restart-game (click)="startGame()"></tc-restart-game>
-<!--<button *ngIf="winner || draw" >PLAY AGAIN</button>-->
+<button class="btn-play-again" tc-restart-game *ngIf="winner || draw" (click)="startGame()">PLAY AGAIN</button>
