@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Winner} from '../tc-winner/tc-winner';
+
 
 @Injectable()
 export class tcService{
   
-  checkGame(hash:any){
+  checkGame(hash:Array<any>): any{
     const factor = hash.length;
     const checkForColMatch = (hash, x) => (hash[x][0] === hash[x][1]) && (hash[x][1] === hash[x][2]) && hash[x][2];
     const checkForRowMatch = (hash, x) => (hash[0][x] === hash[1][x]) && (hash[1][x] === hash[2][x]) && hash[2][x];
