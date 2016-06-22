@@ -3,6 +3,7 @@ import{tcService} from '../tc-service/tc-service';
 import{tcSetValue} from '../tc-set-value/tc-set-value';
 import{tcRestartGame} from '../tc-restart-game/tc-restart-game';
 
+
 @Component({
   selector: 'tc-battlefield',
   templateUrl: 'app/components/tc-battlefield/tpl/tc-battlefield.html',
@@ -15,39 +16,32 @@ export class tcBattlefield{
     this.startGame();
   }
   
-  battlefield:any;
+  battlefield:Array<any>;
   winner:any;
   draw:any;
   currentPlayer:boolean = true; //true = x | false = o 
   currentPlayerLabel:any;
   
   startGame(){
-    this.battlefield = [];
+    // hard code
+    this.battlefield = [
+    // y: 0  y: 1  y: 2
+      [null, null, null], // x: 0
+      [null, null, null], // x: 1
+      [null, null, null]  // x: 2
+    ];
+
     this.winner = this.draw = false;
     this.currentPlayerLabel = this.returnCurrentPlayer(this.currentPlayer);
-    
-    while(this.battlefield.length < 9){
-      let randomNumber:number = Math.ceil(Math.random()*100);
-      let found:boolean = false;
-      
-      for(let i = 0; i < this.battlefield.length; i++){
-        if(this.battlefield[i] == randomNumber){
-          found = true;
-          break;
-        }
-      }
-      
-      if(!found)
-        this.battlefield[this.battlefield.length] = randomNumber;
-    }
+
   }
    
-  play(index:number, currentPlayer:boolean){
-    if(typeof(this.battlefield[index]) !== "string"){
+  play(x:number, y:number, currentPlayer:boolean){
+    if(typeof(this.battlefield[x][y]) !== "string"){
       if(currentPlayer)
-        this.battlefield[index] = 'X';
+        this.battlefield[x][y] = 'X';
       else
-        this.battlefield[index] = 'O';
+        this.battlefield[x][y] = 'O';
       
       this.checkGame(this.battlefield);
       this.currentPlayer = !this.currentPlayer;
@@ -56,12 +50,12 @@ export class tcBattlefield{
   }
 
   checkGame(battlefield:any){
-    let gameStatus:any = this._tcService.checkGame(this.battlefield);
+    let gameStatus:any = this._tcService.checkGame(battlefield) || false;
     
-    if(gameStatus !== undefined && gameStatus.endGame){
-      gameStatus.winner = this.returnCurrentPlayer(gameStatus.winner);
+    if(gameStatus && gameStatus.endGame){
+      gameStatus.winner = this.returnCurrentPlayer(this.currentPlayer);
       this.winner = gameStatus;
-    }else if(gameStatus !== undefined && gameStatus.draw){
+    }else if(gameStatus && gameStatus.draw){
       this.draw = gameStatus.draw;
     }
   }
