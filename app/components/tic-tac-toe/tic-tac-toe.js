@@ -10,14 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var tc_battlefield_1 = require('../tc-battlefield/tc-battlefield');
+var tc_about_1 = require('../tc-about/tc-about');
 var TicTacToe = (function () {
     function TicTacToe() {
     }
     TicTacToe = __decorate([
         core_1.Component({
             selector: 'tic-tac-toe',
-            template: "<tc-battlefield></tc-battlefield>",
-            directives: [tc_battlefield_1.tcBattlefield]
+            template: "<tc-battlefield></tc-battlefield><tc-about></tc-about>",
+            directives: [tc_battlefield_1.tcBattlefield, tc_about_1.tcAbout]
         }), 
         __metadata('design:paramtypes', [])
     ], TicTacToe);
