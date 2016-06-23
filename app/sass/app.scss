@@ -165,6 +165,13 @@ tc-battlefield{
   transition: all 0.25s ease-in-out;
   z-index: 3;
 
+  @media only screen and (max-device-width: 480px) {
+    width: 66px;
+    height: 66px;
+    top: 5%;
+    right: 10%;
+  }
+
   &.show-about{
     transform: rotate(673deg);
     background-color: #131313;
