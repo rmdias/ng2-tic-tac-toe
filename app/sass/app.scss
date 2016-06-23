@@ -169,7 +169,8 @@ tc-battlefield{
     width: 66px;
     height: 66px;
     top: 5%;
-    right: 10%;
+    left: 5%;
+    right: 0;
   }
 
   &.show-about{
@@ -243,18 +244,6 @@ tc-battlefield{
     color: #1976d2;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .github-corner{
   svg {
