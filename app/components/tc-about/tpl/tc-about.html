@@ -1,0 +1,15 @@
+
+<button class="btn-tc-about" [class.show-about]="isAboutVisible" (click)="isAboutVisible = !isAboutVisible">See more informations about this project</button>
+
+
+<div class="tc-about" [class.show-about]="isAboutVisible">
+  <div class="tc-about-container">
+    <img class="angular-logo" src="app/images/angular.svg" alt="Angular 2">
+    <h1>
+      Ng2 Tic Tac Toe is developed as experiment using <a href="https://angular.io/" target="_blank" class="angular-link">Angular 2</a> 
+      <span>by <a href="https://github.com/rmdias" target="_blank" class="tc-author">Rodolfo Dias</a> and <a href="https://dribbble.com/marcmoraes" target="_blank" class="tc-author">Marc Antonio</a> ( UI Designer ) </span>
+    </h1>
+
+    <p>Maintained by Google since 2010. Code licensed under an MIT-style License.</p>
+  </div>
+</div>

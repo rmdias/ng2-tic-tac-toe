@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var tcRestartGame = (function () {
     function tcRestartGame() {
-        console.log('ops');
     }
     tcRestartGame.prototype.restartGame = function () {
         var battleField = document.querySelectorAll('.square');

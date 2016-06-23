@@ -19,40 +19,34 @@ var tcBattlefield = (function () {
         this.startGame();
     }
     tcBattlefield.prototype.startGame = function () {
-        this.battlefield = [];
+        // hard code
+        this.battlefield = [
+            // y: 0  y: 1  y: 2
+            [null, null, null],
+            [null, null, null],
+            [null, null, null] // x: 2
+        ];
         this.winner = this.draw = false;
         this.currentPlayerLabel = this.returnCurrentPlayer(this.currentPlayer);
-        while (this.battlefield.length < 9) {
-            var randomNumber = Math.ceil(Math.random() * 100);
-            var found = false;
-            for (var i = 0; i < this.battlefield.length; i++) {
-                if (this.battlefield[i] == randomNumber) {
-                    found = true;
-                    break;
-                }
-            }
-            if (!found)
-                this.battlefield[this.battlefield.length] = randomNumber;
-        }
     };
-    tcBattlefield.prototype.play = function (index, currentPlayer) {
-        if (typeof (this.battlefield[index]) !== "string") {
+    tcBattlefield.prototype.play = function (x, y, currentPlayer) {
+        if (typeof (this.battlefield[x][y]) !== "string") {
             if (currentPlayer)
-                this.battlefield[index] = 'X';
+                this.battlefield[x][y] = 'X';
             else
-                this.battlefield[index] = 'O';
+                this.battlefield[x][y] = 'O';
             this.checkGame(this.battlefield);
             this.currentPlayer = !this.currentPlayer;
             this.currentPlayerLabel = this.returnCurrentPlayer(this.currentPlayer);
         }
     };
     tcBattlefield.prototype.checkGame = function (battlefield) {
-        var gameStatus = this._tcService.checkGame(this.battlefield);
-        if (gameStatus !== undefined && gameStatus.endGame) {
-            gameStatus.winner = this.returnCurrentPlayer(gameStatus.winner);
+        var gameStatus = this._tcService.checkGame(battlefield) || false;
+        if (gameStatus && gameStatus.endGame) {
+            gameStatus.winner = this.returnCurrentPlayer(this.currentPlayer);
             this.winner = gameStatus;
         }
-        else if (gameStatus !== undefined && gameStatus.draw) {
+        else if (gameStatus && gameStatus.draw) {
             this.draw = gameStatus.draw;
         }
     };
