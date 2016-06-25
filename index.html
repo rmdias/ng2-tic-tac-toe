@@ -5,6 +5,16 @@
     <link rel="shortcut icon" href="favico.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="stylesheet" href="app/css/app.css">
+
+    <!--facebook-->
+    <meta property="og:title" content="Angular2 - Tic Tac Toe"/>
+    <meta property="og:type" content="game"/>
+    <meta property="og:url" content="http://rmdias.github.io/ng2-tic-tac-toe/"/>
+    <meta property="og:image" content="http://rmdias.github.io/ng2-tic-tac-toe/app/images/tictactoe.jpg"/>
+    <meta property="fb:admins" content="Github"/>
+    <meta property="og:description" content="A Tic Tac Toe game built with ❤ using Angular2"/>
+    <!--facebook-->
+
     <!-- 1. Load libraries -->
      <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.js"></script>
@@ -19,6 +29,15 @@
   </head>
   <!-- 3. Display the application -->
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=907662146026846";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
     <a href="https://github.com/rmdias/ng2-tic-tac-toe" title="Fork me on GitHub" class="github-corner">
       <svg width="80" height="80" viewBox="0 0 250 250">
         <title>Fork me on GitHub</title>
@@ -29,6 +48,18 @@
     </a>
     
     <tic-tac-toe><img class="angular-loading" src="app/images/angular.svg" alt="Angular 2"></tic-tac-toe>
+
+    <div class="social-buttons">
+      <a class="github-button" href="https://github.com/rmdias/ng2-tic-tac-toe" data-icon="octicon-star" data-count-href="/rmdias/ng2-tic-tac-toe/stargazers" data-count-api="/repos/rmdias/ng2-tic-tac-toe#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star rmdias/ng2-tic-tac-toe on GitHub">Star</a>
+
+      <div class="fb-share-button" data-href="http://rmdias.github.io/ng2-tic-tac-toe/" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frmdias.github.io%2Fng2-tic-tac-toe%2F&amp;src=sdkpreparse">Share</a></div>
+
+
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://rmdias.github.io/ng2-tic-tac-toe/" data-via="r_mdias">Tweet</a>
+    </div>
+    
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </body>
-  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </html>
