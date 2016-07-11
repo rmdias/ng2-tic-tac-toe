@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 
-
 @Component({
   selector: 'tc-about',
   templateUrl: 'app/components/tc-about/tpl/tc-about.html'
@@ -9,7 +8,5 @@ import {Component} from '@angular/core';
 export class tcAbout{
   constructor(){
 
-  }
-  
- 
+  } 
 }
