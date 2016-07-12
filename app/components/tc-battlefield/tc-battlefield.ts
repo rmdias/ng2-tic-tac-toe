@@ -3,7 +3,6 @@ import{tcService} from '../tc-service/tc-service';
 import{tcSetValue} from '../tc-set-value/tc-set-value';
 import{tcRestartGame} from '../tc-restart-game/tc-restart-game';
 
-
 @Component({
   selector: 'tc-battlefield',
   templateUrl: 'app/components/tc-battlefield/tpl/tc-battlefield.html',
@@ -25,7 +24,7 @@ export class tcBattlefield{
   startGame(){
     // hard code
     this.battlefield = [
-    // y: 0  y: 1  y: 2
+      // y: 0  y: 1  y: 2
       [null, null, null], // x: 0
       [null, null, null], // x: 1
       [null, null, null]  // x: 2
@@ -33,7 +32,6 @@ export class tcBattlefield{
 
     this.winner = this.draw = false;
     this.currentPlayerLabel = this.returnCurrentPlayer(this.currentPlayer);
-
   }
    
   play(x:number, y:number, currentPlayer:boolean){
