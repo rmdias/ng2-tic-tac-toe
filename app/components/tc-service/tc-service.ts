@@ -3,7 +3,10 @@ import {Injectable} from '@angular/core';
 
 @Injectable()
 export class tcService{
-  
+  constructor(){
+    
+  }
+
   checkGame(hash:Array<any>): any{
     const factor = hash.length;
     const checkForColMatch = (hash, x) => (hash[x][0] === hash[x][1]) && (hash[x][1] === hash[x][2]) && hash[x][2];
