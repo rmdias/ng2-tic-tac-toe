@@ -10,6 +10,7 @@ import {Directive, ElementRef, Input} from '@angular/core';
 
 export class tcSetValue{
   constructor(public _elementRef: ElementRef) {
+ 
   }
  
   value:string;
